@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #0b0f19;
+  color: white;
+}
+
+/* Smooth UI feel */
+* {
+  scroll-behavior: smooth;
+}
+
+.pro-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.pro-btn:hover {
+  transform: translateY(-2px);
+}
+
+.dark .pro-btn:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+.pro-card {
+  border-radius: 16px;
+  transition: all 0.25s ease;
+}
+
+.pro-card:hover {
+  transform: translateY(-4px);
+}
+
+.shimmer-text {
+  position: relative;
+  overflow: hidden;
+}
+
+/* moving light sweep */
+.shimmer-text::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+  transform: skewX(-20deg);
+  animation: shimmerMove 2.5s infinite;
+}
+
+@keyframes shimmerMove {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
